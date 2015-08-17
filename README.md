@@ -111,7 +111,7 @@ Search some cool usernames! 'yahtzel', 'carmadamusic', 'flightfacilities' 'the-g
 - Inside our $scope.getUser function we are console.logging our data. Let's apply it to our $scope object so that we can render it in our view.
 - Do this in place of the console.log: `$scope.userData = data.data`
 
-- Now in our view, we can ng-repeat through the data 
+- Now in our view, we can ng-repeat through the data
 
 `ng-repeat="song in userData"`
 
@@ -128,7 +128,7 @@ Here's an example of how we can markup the data using Bootstrap:
   </div>
 ```
 
-This will give us the album art of each song. Notice that we put an ng-click on each img that will allow us to call `play`. Now let's actually play the song. 
+This will give us the album art of each song. Notice that we put an ng-click on each img that will allow us to call `play`. Now let's actually play the song.
 
 We need to access the SoundCloud JavaScript SDK. SDK stands for Software Development Kit. It's essentially a fancy API made for JavaScript specifically. We won't spend too much time talking about how the SoundCloud SDK works. We just need it to play our tunes!
 
@@ -152,7 +152,7 @@ $sce is an angular tool being used to escape certain characters. We need to inje
 
 This code is essentially calling SoundCloud's function oEmbed, and then in the callback is doing some angular magic so as to sanitize the code and pass it into our DOM. oEmbed comes with a lot of data, this bit of code strips out the HTML for our use.
 
-- Next, in our view we want to render the code. AngularJS has a very useful directive called ng-bind-html. If we try to say 
+- Next, in our view we want to render the code. AngularJS has a very useful directive called ng-bind-html. If we try to say
 
 ```$scope.player_html = '<div>Crazy SoundCloud player code!</div>'```
 
@@ -173,5 +173,3 @@ Use ng-route to divide your app into two routes, `/#/tracks` and `/#/users/:user
 In the tracks view, modify the markup so that the track's username is listed. When that username is clicked, take the user to `/#/users/:userId`, substituting userId with the userId found for that SoundCloud user.
 
 In your controller that handles users, inject a service that uses the [users.json endpoint](https://developers.soundcloud.com/docs/api/reference#users) to list the SoundCloud information for that user.
-
-
